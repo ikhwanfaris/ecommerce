@@ -176,7 +176,7 @@ if(isset($_GET["action"]))
 					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
 						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />  
 						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
-						<h4 class="text-danger">$ <?php echo $row["price"]; ?></h4>
+						<h4 class="text-danger">RM <?php echo $row["price"]; ?></h4>
 						<input type="text" name="quantity" value="1" class="form-control" />
 						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
@@ -211,8 +211,8 @@ if(isset($_GET["action"]))
 					<tr>
 						<td><?php echo $values["item_name"]; ?></td>
 						<td><?php echo $values["item_quantity"]; ?></td>
-						<td>$ <?php echo $values["item_price"]; ?></td>
-						<td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
+						<td>RM <?php echo $values["item_price"]; ?></td>
+						<td>RM <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
 						<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
 					</tr>
 					<?php
@@ -221,7 +221,7 @@ if(isset($_GET["action"]))
 					?>
 					<tr>
 						<td colspan="3" align="right">Total</td>
-						<td align="right">$ <?php echo number_format($total, 2); ?></td>
+						<td align="right">RM <?php echo number_format($total, 2); ?></td>
 						<td></td>
 					</tr>
 					<?php
@@ -314,7 +314,7 @@ if(isset($_GET["action"]))
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_1.jpg)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
 								<h2>Fresh Mushrooms</h2>
-								<span class="pricing">$7.50</span>
+								<span class="pricing">RM 7.50</span>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 							</div>
 						</div>
@@ -323,7 +323,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_2.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
 									<h2>Grilled Chiken Salad</h2>
-									<span class="pricing">$12.00</span>
+									<span class="pricing">RM12.00</span>
 									<p>Far far away, behind the word mountains.</p>
 								</div>
 							</div>
@@ -331,7 +331,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_8.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
 									<h2>Cheese and Garlic Toast</h2>
-									<span class="pricing">$4.50</span>
+									<span class="pricing">RM 4.50</span>
 									<p>Far far away, behind the word mountains.</p>
 								</div>
 							</div>
@@ -342,7 +342,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_7.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
 									<h2>Organic Egg</h2>
-									<span class="pricing">$4.99</span>
+									<span class="pricing">RM 4.99</span>
 									<p>Far far away, behind the word mountains.</p>
 								</div>
 							</div>
@@ -350,7 +350,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_6.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
 									<h2>Salad with Crispy Chicken</h2>
-									<span class="pricing">$8.50</span>
+									<span class="pricing">RM 8.50</span>
 									<p>Far far away, behind the word mountains.</p>
 								</div>
 							</div>
@@ -359,7 +359,7 @@ if(isset($_GET["action"]))
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_3.jpg)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
 								<h2>Tomato Soup with Chicken</h2>
-								<span class="pricing">$12.99</span>
+								<span class="pricing">RM12.99</span>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 							</div>
 						</div>
@@ -426,7 +426,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$17.50
+										RM17.50
 									</div>
 								</li>
 								<li>
@@ -440,7 +440,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$7.99
+										RM 7.99
 									</div>
 								</li>
 								<li>
@@ -454,7 +454,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$12.99
+										RM12.99
 									</div>
 								</li>
 								<li>
@@ -468,7 +468,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$12.99
+										RM12.99
 									</div>
 								</li>
 							</ul>
@@ -476,7 +476,7 @@ if(isset($_GET["action"]))
 					</div>
 					<div class="col-md-6">
 						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-dishes">Steak</h2>
+							<h2 class="fh5co-dishes">Western</h2>
 							<ul>
 								<li>
 									<div class="fh5co-food-desc">
@@ -489,7 +489,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$17.50
+										RM17.50
 									</div>
 								</li>
 								<li>
@@ -503,8 +503,8 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$7.99
-									</div>
+										RM 7.99
+									</div> 
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
@@ -517,7 +517,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$12.99
+										RM12.99
 									</div>
 								</li>
 								<li>
@@ -531,7 +531,7 @@ if(isset($_GET["action"]))
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										$12.99
+										RM12.99
 									</div>
 								</li>
 							</ul>
