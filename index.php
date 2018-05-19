@@ -171,7 +171,7 @@ if(isset($_GET["action"]))
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
 					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
 						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />  
@@ -181,7 +181,7 @@ if(isset($_GET["action"]))
 						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="test" />
+						<input type="button" name="Details" style="margin-top:5px;"  value="Details" />
 					</div>
 				</form>
 			</div>
@@ -195,7 +195,7 @@ if(isset($_GET["action"]))
 			<div class="table-responsive">
 				<table class="table table-bordered">
 					<tr>
-						<th width="40%">Item Name</th>
+						<th width="20%">Item Name</th>
 						<th width="10%">Quantity</th>
 						<th width="20%">Price</th>
 						<th width="15%">Total</th>
