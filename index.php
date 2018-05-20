@@ -161,8 +161,7 @@ if(isset($_GET["action"]))
 			<br />
 			<br />
 			<br />
-			<br />
-			<br /><br />
+			
 			<?php
 				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
