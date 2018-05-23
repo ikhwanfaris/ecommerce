@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2018 at 05:12 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: May 23, 2018 at 09:30 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -73,10 +71,18 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id`, `name`, `image`, `price`) VALUES
-(1, 'Samsung J2 Pro', '1.jpg', 100.00),
-(2, 'HP Notebook', '2.jpg', 299.00),
-(3, 'Panasonic T44 Lite', '3.jpg', 125.00),
-(10, 'Oneplus 6', 'oneplus6.jpg\r\n', 2500.00);
+(1, 'Chicken chop', 'chicken chop.jpg', 10.90),
+(2, 'Lamb Chop', 'lamb chop.jpg', 12.90),
+(3, 'Fish ''N'' Chip', 'fishNchip.jpg', 11.90),
+(4, 'Nasi Kerabu', 'nasi kerabu.jpg', 6.00),
+(7, 'Roti Canai', 'roti canai.jpg', 1.20),
+(5, 'Nasi Ayam', 'nasi ayam.jpg', 5.00),
+(6, 'Nasi Lemak', 'nasi lemak 2.jpg', 4.50),
+(8, 'Sandwich', 'sandwich 2.png', 2.00),
+(9, 'Pancake', 'pancake.png', 1.50),
+(10, 'Orange juice', 'orange juice.jpg', 3.00),
+(11, 'Coffee', 'hot drink.png', 1.60),
+(12, 'Tea', 'cool drink.png', 1.20);
 
 --
 -- Indexes for dumped tables
@@ -108,9 +114,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
