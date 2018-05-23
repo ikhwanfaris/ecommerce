@@ -145,7 +145,7 @@ if(isset($_GET["action"]))
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
 						<a href="#" data-nav-section="contact">Contact</a>
-						<a href="account.php">Account</a>
+						<a href="#" data-nav-section="account">Account</a>
 					</div>
 				</div>
 				
@@ -158,89 +158,6 @@ if(isset($_GET["action"]))
 	</head>
 	<body>
 		<br />
-<<<<<<< HEAD
-=======
-		<div class="container">
-			<br />
-			<br />
-			<br />
-			
-			<?php
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
-				$result = mysqli_query($connect, $query);
-				if(mysqli_num_rows($result) > 0)
-				{
-					while($row = mysqli_fetch_array($result))
-					{
-				?>
-			<div class="col-md-3">
-				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />  
-						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
-						<h4 class="text-danger">RM <?php echo $row["price"]; ?></h4>
-						<input type="text" name="quantity" value="1" class="form-control" />
-						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
-						<input type="button" name="Details" style="margin-top:5px;"  value="Details" />
-					</div>
-				</form>
-			</div>
-			<?php
-					}
-				}
-			?>
-			<div style="clear:both"></div>
-			<br />
-			<h3>Order Details</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<tr>
-						<th width="20%">Item Name</th>
-						<th width="10%">Quantity</th>
-						<th width="20%">Price</th>
-						<th width="15%">Total</th>
-						<th width="5%">Action</th>
-					</tr>
-					<?php
-					if(!empty($_SESSION["shopping_cart"]))
-					{
-						$total = 0;
-						foreach($_SESSION["shopping_cart"] as $keys => $values)
-						{
-					?>
-					<tr>
-						<td><?php echo $values["item_name"]; ?></td>
-						<td><?php echo $values["item_quantity"]; ?></td>
-						<td>RM <?php echo $values["item_price"]; ?></td>
-						<td>RM <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
-						<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
-					</tr>
-					<?php
-							$total = $total + ($values["item_quantity"] * $values["item_price"]);
-						}
-					?>
-					<tr>
-						<td colspan="3" align="right">Total</td>
-						<td align="right">RM <?php echo number_format($total, 2); ?></td>
-						<td></td>
-					</tr>
-					<?php
-					}
-					?>
-						
-				</table>
-			</div>
-		</div>
-	</div>
-	<br />
-	</body>
-</html>
-
-<?php
-//If you have use Older PHP Version, Please Uncomment this function for removing error 
->>>>>>> 1f096c9d02026fc4687150f095f0aec77b6963dc
 
 
 		<div id="fh5co-about" data-section="about">
@@ -299,7 +216,7 @@ if(isset($_GET["action"]))
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
 						<h2 class="heading to-animate">Promotion Items</h2>
-						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p class="sub-heading to-animate"></p>
 					</div>
 				</div>
 				<div class="row">
@@ -309,7 +226,7 @@ if(isset($_GET["action"]))
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
 								<h2>Fresh Mushrooms</h2>
 								<span class="pricing">RM 7.50</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<p></p>
 							</div>
 						</div>
 						<div class="fh5co-v-half">
@@ -318,7 +235,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
 									<h2>Grilled Chiken Salad</h2>
 									<span class="pricing">RM12.00</span>
-									<p>Far far away, behind the word mountains.</p>
+									<p></p>
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
@@ -326,7 +243,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
 									<h2>Cheese and Garlic Toast</h2>
 									<span class="pricing">RM 4.50</span>
-									<p>Far far away, behind the word mountains.</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -337,7 +254,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
 									<h2>Organic Egg</h2>
 									<span class="pricing">RM 4.90</span>
-									<p>Far far away, behind the word mountains.</p>
+									<p></p>
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 to-animate-2">
@@ -345,7 +262,7 @@ if(isset($_GET["action"]))
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
 									<h2>Salad with Crispy Chicken</h2>
 									<span class="pricing">RM 8.50</span>
-									<p>Far far away, behind the word mountains.</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -354,7 +271,7 @@ if(isset($_GET["action"]))
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
 								<h2>Tomato Soup with Chicken</h2>
 								<span class="pricing">RM12.90</span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+								<p></p>
 							</div>
 						</div>
 
@@ -369,7 +286,7 @@ if(isset($_GET["action"]))
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
 						<h2 class="heading to-animate">Food Menu</h2>
-						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p class="sub-heading to-animate"></p>
 					</div>
 				</div>
 				<div class="row row-padded">
@@ -384,11 +301,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Pineapple Juice</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM17.50
+										RM 3.50
 									</div>
 								</li>
 								<li>
@@ -398,11 +315,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Green Juice</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 7.90
+										RM 4.90
 									</div>
 								</li>
 								<li>
@@ -412,11 +329,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Soft Drinks</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM12.90
+										RM 2.90
 									</div>
 								</li>
 								<li>
@@ -426,11 +343,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Carlo Rosee Drinks</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM12.90
+										RM 5.90
 									</div>
 								</li>
 							</ul>
@@ -447,11 +364,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Beef Steak</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM17.50
+										RM10.90
 									</div>
 								</li>
 								<li>
@@ -461,11 +378,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Tomato with Chicken</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 7.90
+										RM 6.90
 									</div> 
 								</li>
 								<li>
@@ -475,11 +392,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Sausages from Italy</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM12.90
+										RM 7.90
 									</div>
 								</li>
 								<li>
@@ -489,11 +406,11 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Beef Grilled</h3>
-											<p>Far far away, behind the word mountains.</p>
+											<p></p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM12.90
+										RM11.90
 									</div>
 								</li>
 							</ul>
@@ -508,35 +425,18 @@ if(isset($_GET["action"]))
 			</div>
 		</div>
 
-		<div id="fh5co-events" data-section="events" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
+		<div id="fh5co-events" data-section="account" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
 						<h2 class="heading">Login</h2>
-						<p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 					</div>
 				</div>
 				
-		<form method="post" action="account.php">
-	<!-- display validation errors here -->
-	<?php include('errors.php'); ?>
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" placeholder="Enter username" required>
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password" placeholder="Enter correct password" required>
-		</div>
-		<div class="input-group">
-			<button type="submit" name="sign_in" class="btn">Sign In</button>
-		</div>
-		<p>
-			Not yet registered? <a href="register.php">Sign Up</a>
-	</form>
-
-
+						
+					</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -607,6 +507,7 @@ if(isset($_GET["action"]))
 						<td align="right">RM <?php echo number_format($total, 2); ?></td>
 						<td></td>
 					</tr>
+
 					<?php
 					}
 					?>
@@ -639,7 +540,7 @@ if(isset($_GET["action"]))
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
 						<h2 class="heading to-animate">Contact</h2>
-						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p class="sub-heading to-animate"></p>
 					</div>
 				</div>
 				<div class="row">
