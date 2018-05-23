@@ -425,13 +425,42 @@ if(isset($_GET["action"]))
 			</div>
 		</div>
 
-		<div id="fh5co-events" data-section="account" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
+		<div id="fh5co-events" data-section="account" style="background-image: url(images/notelogin.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
 						<h2 class="heading">Login</h2>
 					</div>
+<div id="content">
+  <div>
+    <div id="account">
+      <div>
+        <form action="#">
+          
+          <center><table>
+            <tr>
+              <td><label for="name">Name </label></td>
+              <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password  </label></td>
+              <td><input type="text" id="password"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="rememberme"><label for="rememberme">
+                  <input type="checkbox" id="rememberme">
+                  Remember me on this site</label></td>
+            </tr>
+          </table>
+          </center>
+          <input type="submit" value="Sign-In" class="submitbtn">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 				</div>
 				
 						
