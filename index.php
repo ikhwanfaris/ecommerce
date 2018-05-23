@@ -438,24 +438,23 @@ if(isset($_GET["action"]))
       <div>
         <form action="#">
           
-          <center><table>
-            <tr>
-              <td><label for="name">Name </label></td>
-              <td><input type="text" id="name"></td>
-            </tr>
-            <tr>
-              <td><label for="password">Password  </label></td>
-              <td><input type="text" id="password"></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="rememberme"><label for="rememberme">
-                  <input type="checkbox" id="rememberme">
-                  Remember me on this site</label></td>
-            </tr>
-          </table>
+          <center>
+            <div class="input-group">
+			<label>Username </label>
+			<input type="text" name="username" placeholder="Enter username" required>
+		</div><br>
+		<div class="input-group">
+			<label>Password       </label>
+			<input type="password" name="password" placeholder="Enter correct password" required>
+		</div><br/>
+		<div class="input-group">
+			<button type="submit" name="sign_in" class="btn">Sign In</button>
+		</div><br/>
+		<p>
+			Not yet registered? <a href="register.php">Sign Up</a>
+         
           </center>
-          <input type="submit" value="Sign-In" class="submitbtn">
+          
         </form>
       </div>
     </div>
@@ -645,6 +644,27 @@ if(isset($_GET["action"]))
 		</div>
 	</div>
 	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
