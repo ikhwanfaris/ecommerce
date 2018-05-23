@@ -1,168 +1,123 @@
-<?php require('includes/config.php');
+<?php
+session_start();
+require_once('class.user.php');
+$user = new USER();
 
-//if logged in redirect to members page
-if( $user->is_logged_in() ){ header('Location: memberpage.php'); exit(); }
-
-//if form has been submitted process it
-if(isset($_POST['submit'])){
-
-    if (!isset($_POST['username'])) $error[] = "Please fill out all fields";
-    if (!isset($_POST['email'])) $error[] = "Please fill out all fields";
-    if (!isset($_POST['password'])) $error[] = "Please fill out all fields";
-
-	$username = $_POST['username'];
-
-	//very basic validation
-	if(!$user->isValidUsername($username)){
-		$error[] = 'Usernames must be at least 3 Alphanumeric characters';
-	} else {
-		$stmt = $db->prepare('SELECT username FROM members WHERE username = :username');
-		$stmt->execute(array(':username' => $username));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-		if(!empty($row['username'])){
-			$error[] = 'Username provided is already in use.';
-		}
-
-	}
-
-	if(strlen($_POST['password']) < 3){
-		$error[] = 'Password is too short.';
-	}
-
-	if(strlen($_POST['passwordConfirm']) < 3){
-		$error[] = 'Confirm password is too short.';
-	}
-
-	if($_POST['password'] != $_POST['passwordConfirm']){
-		$error[] = 'Passwords do not match.';
-	}
-
-	//email validation
-	$email = htmlspecialchars_decode($_POST['email'], ENT_QUOTES);
-	if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-	    $error[] = 'Please enter a valid email address';
-	} else {
-		$stmt = $db->prepare('SELECT email FROM members WHERE email = :email');
-		$stmt->execute(array(':email' => $email));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-		if(!empty($row['email'])){
-			$error[] = 'Email provided is already in use.';
-		}
-
-	}
-
-
-	//if no errors have been created carry on
-	if(!isset($error)){
-
-		//hash the password
-		$hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-		//create the activasion code
-		$activasion = md5(uniqid(rand(),true));
-
-		try {
-
-			//insert into database with a prepared statement
-			$stmt = $db->prepare('INSERT INTO members (username,password,email,active) VALUES (:username, :password, :email, :active)');
-			$stmt->execute(array(
-				':username' => $username,
-				':password' => $hashedpassword,
-				':email' => $email,
-				':active' => $activasion
-			));
-			$id = $db->lastInsertId('memberID');
-
-			//send email
-			$to = $_POST['email'];
-			$subject = "Registration Confirmation";
-			$body = "<p>Thank you for registering at demo site.</p>
-			<p>To activate your account, please click on this link: <a href='".DIR."activate.php?x=$id&y=$activasion'>".DIR."activate.php?x=$id&y=$activasion</a></p>
-			<p>Regards Site Admin</p>";
-
-			$mail = new Mail();
-			$mail->setFrom(SITEEMAIL);
-			$mail->addAddress($to);
-			$mail->subject($subject);
-			$mail->body($body);
-			$mail->send();
-
-			//redirect to index page
-			header('Location: index.php?action=joined');
-			exit;
-
-		//else catch the exception and show the error.
-		} catch(PDOException $e) {
-		    $error[] = $e->getMessage();
-		}
-
-	}
-
+if($user->is_loggedin()!="")
+{
+	$user->redirect('home.php');
 }
 
-//define page title
-$title = 'Demo';
+if(isset($_POST['btn-signup']))
+{
+	$uname = strip_tags($_POST['txt_uname']);
+	$umail = strip_tags($_POST['txt_umail']);
+	$upass = strip_tags($_POST['txt_upass']);	
+	
+	if($uname=="")	{
+		$error[] = "provide username !";	
+	}
+	else if($umail=="")	{
+		$error[] = "provide email id !";	
+	}
+	else if(!filter_var($umail, FILTER_VALIDATE_EMAIL))	{
+	    $error[] = 'Please enter a valid email address !';
+	}
+	else if($upass=="")	{
+		$error[] = "provide password !";
+	}
+	else if(strlen($upass) < 6){
+		$error[] = "Password must be atleast 6 characters";	
+	}
+	else
+	{
+		try
+		{
+			$stmt = $user->runQuery("SELECT user_name, user_email FROM users WHERE user_name=:uname OR user_email=:umail");
+			$stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
+			$row=$stmt->fetch(PDO::FETCH_ASSOC);
+				
+			if($row['user_name']==$uname) {
+				$error[] = "sorry username already taken !";
+			}
+			else if($row['user_email']==$umail) {
+				$error[] = "sorry email id already taken !";
+			}
+			else
+			{
+				if($user->register($uname,$umail,$upass)){	
+					$user->redirect('register.php?joined');
+				}
+			}
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}	
+}
 
-//include header template
-require('layout/header.php');
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Coding Cage : Sign up</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="style.css" type="text/css"  />
+</head>
+<body>
 
+<div class="signin-form">
 
 <div class="container">
-
-	<div class="row">
-
-	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="form" method="post" action="" autocomplete="off">
-				<h2>Please Sign Up</h2>
-				<p>Already a member? <a href='login.php'>Login</a></p>
-				<hr>
-
-				<?php
-				//check for any errors
-				if(isset($error)){
-					foreach($error as $error){
-						echo '<p class="bg-danger">'.$error.'</p>';
-					}
+    	
+        <form method="post" class="form-signin">
+            <h2 class="form-signin-heading">Sign up.</h2><hr />
+            <?php
+			if(isset($error))
+			{
+			 	foreach($error as $error)
+			 	{
+					 ?>
+                     <div class="alert alert-danger">
+                        <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?>
+                     </div>
+                     <?php
 				}
-
-				//if action is joined show sucess
-				if(isset($_GET['action']) && $_GET['action'] == 'joined'){
-					echo "<h2 class='bg-success'>Registration successful, please check your email to activate your account.</h2>";
-				}
-				?>
-
-				<div class="form-group">
-					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
-				</div>
-				<div class="form-group">
-					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" tabindex="2">
-				</div>
-				<div class="row">
-					<div class="col-xs-6 col-sm-6 col-md-6">
-						<div class="form-group">
-							<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="3">
-						</div>
-					</div>
-					<div class="col-xs-6 col-sm-6 col-md-6">
-						<div class="form-group">
-							<input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control input-lg" placeholder="Confirm Password" tabindex="4">
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
-				</div>
-			</form>
-		</div>
-	</div>
+			}
+			else if(isset($_GET['joined']))
+			{
+				 ?>
+                 <div class="alert alert-info">
+                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='login.php'>login</a> here
+                 </div>
+                 <?php
+			}
+			?>
+            <div class="form-group">
+            <input type="text" class="form-control" name="txt_uname" placeholder="Enter Username" value="<?php if(isset($error)){echo $uname;}?>" />
+            </div>
+            <div class="form-group">
+            <input type="text" class="form-control" name="txt_umail" placeholder="Enter E-Mail ID" value="<?php if(isset($error)){echo $umail;}?>" />
+            </div>
+            <div class="form-group">
+            	<input type="password" class="form-control" name="txt_upass" placeholder="Enter Password" />
+            </div>
+            <div class="clearfix"></div><hr />
+            <div class="form-group">
+            	<button type="submit" class="btn btn-primary" name="btn-signup">
+                	<i class="glyphicon glyphicon-open-file"></i>&nbsp;SIGN UP
+                </button>
+            </div>
+            <br />
+            <label>have an account ! <a href="login.php">Sign In</a></label>
+        </form>
+       </div>
+</div>
 
 </div>
 
-<?php
-//include header template
-require('layout/footer.php');
-?>
+</body>
+</html>

@@ -1,113 +1,85 @@
 <?php
-//include config
-require_once('includes/config.php');
+session_start();
+require_once("class.user.php");
+$login = new USER();
 
-//check if already logged in move to home page
-if( $user->is_logged_in() ){ header('Location: register.php'); exit(); }
+if($login->is_loggedin()!="")
+{
+	$login->redirect('home.php');
+}
 
-//process login form if submitted
-if(isset($_POST['submit'])){
-
-	if (!isset($_POST['username'])) $error[] = "Please fill out all fields";
-	if (!isset($_POST['password'])) $error[] = "Please fill out all fields";
-
-	$username = $_POST['username'];
-	if ( $user->isValidUsername($username)){
-		if (!isset($_POST['password'])){
-			$error[] = 'A password must be entered';
-		}
-		$password = $_POST['password'];
-
-		if($user->login($username,$password)){
-			$_SESSION['username'] = $username;
-			header('Location: memberpage.php');
-			exit;
-
-		} else {
-			$error[] = 'Wrong username or password or your account has not been activated.';
-		}
-	}else{
-		$error[] = 'Usernames are required to be Alphanumeric, and between 3-16 characters long';
+if(isset($_POST['btn-login']))
+{
+	$uname = strip_tags($_POST['txt_uname_email']);
+	$umail = strip_tags($_POST['txt_uname_email']);
+	$upass = strip_tags($_POST['txt_password']);
+		
+	if($login->doLogin($uname,$umail,$upass))
+	{
+		$login->redirect('home.php');
 	}
-
-
-
-}//end if submit
-
-//define page title
-$title = 'Login';
-
-//include header template
-require('layout/header.php'); 
+	else
+	{
+		$error = "Wrong Details !";
+	}	
+}
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Coding Cage : Login</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="style.css" type="text/css"  />
+</head>
+<body>
 
-	
-<div class="container">
+<div class="signin-form">
 
-	<div class="row">
-
-	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="form" method="post" action="" autocomplete="off">
-				<h2>Please Login</h2>
-				<p><a href='./'>Back to home page</a></p>
-				<hr>
-
-				<?php
-				//check for any errors
-				if(isset($error)){
-					foreach($error as $error){
-						echo '<p class="bg-danger">'.$error.'</p>';
-					}
-				}
-
-				if(isset($_GET['action'])){
-
-					//check the action
-					switch ($_GET['action']) {
-						case 'active':
-							echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
-							break;
-						case 'reset':
-							echo "<h2 class='bg-success'>Please check your inbox for a reset link.</h2>";
-							break;
-						case 'resetAccount':
-							echo "<h2 class='bg-success'>Password changed, you may now login.</h2>";
-							break;
-					}
-
-				}
-
-				
+	<div class="container">
+     
+        
+       <form class="form-signin" method="post" id="login-form">
+      
+        <h2 class="form-signin-heading">Log In to WebApp.</h2><hr />
+        
+        <div id="error">
+        <?php
+			if(isset($error))
+			{
 				?>
+                <div class="alert alert-danger">
+                   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?> !
+                </div>
+                <?php
+			}
+		?>
+        </div>
+        
+        <div class="form-group">
+        <input type="text" class="form-control" name="txt_uname_email" placeholder="Username or E mail ID" required />
+        <span id="check-e"></span>
+        </div>
+        
+        <div class="form-group">
+        <input type="password" class="form-control" name="txt_password" placeholder="Your Password" />
+        </div>
+       
+     	<hr />
+        
+        <div class="form-group">
+            <button type="submit" name="btn-login" class="btn btn-default">
+                	<i class="glyphicon glyphicon-log-in"></i> &nbsp; SIGN IN
+            </button>
+        </div>  
+      	<br />
+            <label>Don't have account yet ! <a href="register.php">Sign Up</a></label>
+      </form>
 
-				<div class="form-group">
-					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
-				</div>
-
-				<div class="form-group">
-					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="3">
-				</div>
-				
-				<div class="row">
-					<div class="col-xs-9 col-sm-9 col-md-9">
-						 <a href='reset.php'>Forgot your Password?</a>
-					</div>
-				</div>
-				
-				<hr>
-				<div class="row">
-					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
-				</div>
-			</form>
-		</div>
-	</div>
-
-
-
+    </div>
+    
 </div>
 
-
-<?php 
-//include header template
-require('layout/footer.php'); 
-?>
+</body>
+</html>

@@ -52,6 +52,7 @@ if(isset($_GET["action"]))
 }
 
 ?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -118,6 +119,8 @@ if(isset($_GET["action"]))
 							<h1 class="to-animate">Foodee</h1>
 							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
 							<h2 class="to-animate">Call 1800 2525 4388 now!</h2>
+							<h5 class="to-animate">Welcome</h2>
+							<label class="h5"><?php print($userRow['user_name']); ?></label>
 						</div>
 					</div>
 				</div>
@@ -166,7 +169,7 @@ if(isset($_GET["action"]))
 				<h2 class="heading to-animate">About Us</h2>
 				<p class="to-animate"><span class="firstcharacter">D</span>eliver the food to you when you are hungry. The solution to your transportation problem to get something to eat daily. We are trying our best to deliver the best and fresh dishes for you .
 				</p>
-				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
+				<p class="text-center to-animate"><a href="register.php" class="btn btn-primary btn-outline">Register Now</a></p>
 			</div>
 		</div>
 
@@ -430,7 +433,8 @@ if(isset($_GET["action"]))
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
-						<h2 class="heading">Login</h2>
+						<h2 class="heading">My Account</h2>
+						<p class="text-center to-animate"><a href="login.php" class="btn btn-primary btn-outline">Log In</a></p>
 					</div>
 				</div>
 				
