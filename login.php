@@ -17,7 +17,7 @@ if(isset($_POST['btn-login']))
 		
 	if($login->doLogin($uname,$umail,$upass))
 	{
-		$login->redirect('index.php');
+		$login->redirect('cart.php');
 	}
 	else
 	{
