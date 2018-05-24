@@ -210,10 +210,16 @@ p {
   margin: 0;
   padding: 0;
   font-family: "Playfair Display", serif;
+<<<<<<< HEAD
   font-size: 200px;
   font-weight: 700;
   font-style: italic;
   color: orange;
+=======
+  font-size: 250px;
+  font-weight: 500;
+  color: #fff;
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -1047,8 +1053,9 @@ p {
 
 #fh5co-footer {
   width: 100%;
+  height: 500px;
   background: rgba(0, 0, 0, 0.9);
-  padding: 7em 0;
+  padding: 2em 0;
   z-index: 1;
   font-size: 14px;
   line-height: 1.5;
@@ -1354,8 +1361,17 @@ p {
   padding-bottom: 40px;
 }
 
+.bg-danger, .bg-success {
+	padding: 0 5px;
+}
+
+a {
+	color: #EF1F2F;
+	text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
 
+<<<<<<< HEAD
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -1375,3 +1391,47 @@ p {
     background-color: gray /* Add a dark-grey background on hover */
 }
 
+=======
+.form-signin {
+  max-width: 500px;
+  padding: 19px 29px 29px;
+  margin: 0 auto;
+  background-color: #fff;
+
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    
+font-family:Tahoma, Geneva, sans-serif;
+color:#990000;
+font-weight:lighter;
+}
+
+.form-signin .form-signin-heading{
+  color:#00A2D1;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"],
+.form-signin input[type="email"] {
+  font-size: 16px;
+  height: 45px;
+  padding: 7px 9px;
+}
+
+.signin-form, .body-container
+{
+
+margin-top:110px;
+}
+
+.navbar-brand{
+	font-family:"Lucida Handwriting";
+}
+#btn-submit{
+	height:45px;
+}
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5

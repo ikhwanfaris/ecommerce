@@ -2,6 +2,17 @@
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "test");
 
+require_once("class.user.php");
+	$auth_user = new USER();
+	
+	
+	$user_id = $_SESSION['user_session'];
+	
+	$stmt = $auth_user->runQuery("SELECT * FROM users WHERE user_id=:user_id");
+	$stmt->execute(array(":user_id"=>$user_id));
+	
+	$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+
 if(isset($_POST["add_to_cart"]))
 {
 	if(isset($_SESSION["shopping_cart"]))
@@ -52,6 +63,7 @@ if(isset($_GET["action"]))
 }
 
 ?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -60,7 +72,11 @@ if(isset($_GET["action"]))
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
 	<title>FoodPack | ONLINE FOOD DELIVERY SYSTEM</title>
+=======
+	<title>Index-FoodPack </title>
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -115,10 +131,18 @@ if(isset($_GET["action"]))
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
+<<<<<<< HEAD
 							<h3 style="text-align: center; color: white">ONLINE FOOD DELIVERY SYSTEM</h3>
 							<h1 class="to-animate">FoodPack</h1>
 							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
 							<h2 class="to-animate">CALL 1800 2525 4388 NOW!</h2>
+=======
+						<div align="left">
+							<h1 class="to-animate">FoodPack</h1></div></br>
+							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
+							<h2 class="to-animate">Call 1800 2525 4388 now!</h2>
+							<h2 class="to-animate">Welcome <?php print($userRow['user_name']); ?></h2>
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 						</div>
 					</div>
 				</div>
@@ -141,13 +165,16 @@ if(isset($_GET["action"]))
 						<a href="#" data-nav-section="promotions">Promotions</a>
 					</div>
 					<div class="fh5co-logo">
+<<<<<<< HEAD
 						<a href="" data-nav-section="foodpack" >FoodPack</a>
+=======
+						<a href="index.html">FoodPack</a>
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
-						<a href="#" data-nav-section="contact">Contact</a>
 						<a href="#" data-nav-section="account">Account</a>
-					</div>
+						<a href="#" data-nav-section="order">Order</a>
 				</div>
 				
 			</div>
@@ -167,7 +194,6 @@ if(isset($_GET["action"]))
 				<h2 class="heading to-animate">About Us</h2>
 				<p class="to-animate"><span class="firstcharacter">D</span>eliver the food to you when you are hungry. The solution to your transportation problem to get something to eat daily. We are trying our best to deliver the best and fresh dishes for you .
 				</p>
-				<p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Get in touch</a></p>
 			</div>
 		</div>
 
@@ -633,7 +659,8 @@ if(isset($_GET["action"]))
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
-						<h2 class="heading">Login</h2>
+						<h2 class="heading">My Account</h2>
+						<p class="text-center to-animate"><a href="logout.php?logout=true" class="btn btn-primary btn-outline">Sign Out</a></p>
 					</div>
 <div id="content">
   <div>
@@ -671,8 +698,33 @@ if(isset($_GET["action"]))
 				</div>
 			</div>
 		</div>
+	</body>
+</html>
 
+<?php
+//If you have use Older PHP Version, Please Uncomment this function for removing error 
+
+/*function array_column($array, $column_name)
+{
+	$output = array();
+	foreach($array as $keys => $values)
+	{
+		$output[] = $values[$column_name];
+	}
+	return $output;
+}*/
+?>
+
+<<<<<<< HEAD
+
+<<<<<<< HEAD
 <div class="container" data-section="foodpack">
+=======
+=======
+		
+		<div id="fh5co-contact" data-section="order">
+		<div class="container">
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 			<h1><center>Select Order</center></h1>
 			<h3><center>Select your product menu for</center></h3>
 			<h4><center>Breakfast - Lunch - Dinner</center></h4>
@@ -751,7 +803,9 @@ if(isset($_GET["action"]))
 			<button type="submit" name="payment" class="btn">Make a payment</button>
 		</div>
 	</div>
+>>>>>>> 4a82b0bf3e352778c9f8b26d75b64696691c717c
 	<br />
+<<<<<<< HEAD
 	</body>
 </html>
 
@@ -832,6 +886,8 @@ if(isset($_GET["action"]))
 			</div>
 		</div>
 		</div>
+=======
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 
 	<div id="fh5co-footer">
 		<div class="container">
