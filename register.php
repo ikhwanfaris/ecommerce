@@ -13,7 +13,9 @@ if(isset($_POST['btn-signup']))
 	$uname = strip_tags($_POST['txt_uname']);
 	$umail = strip_tags($_POST['txt_umail']);
 	$upass = strip_tags($_POST['txt_upass']);	
-	
+	$uaddress = strip_tags($_POST['txt_uaddress']);
+	$uphone = strip_tags($_POST['txt_uphone']);
+
 	if($uname=="")	{
 		$error[] = "provide username !";	
 	}
@@ -45,7 +47,7 @@ if(isset($_POST['btn-signup']))
 			}
 			else
 			{
-				if($user->register($uname,$umail,$upass)){	
+				if($user->register($uname,$umail,$upass,$uaddress,$uphone)){	
 					$user->redirect('register.php?joined');
 				}
 			}
@@ -165,13 +167,18 @@ if(isset($_POST['btn-signup']))
             <div class="form-group">
             	<input type="password" class="form-control" name="txt_upass" placeholder="Enter Password" />
             </div>
+			<div class="form-group">
+            	<input type="text" class="form-control" name="txt_uaddress" placeholder="Enter Home Address" />
+            </div>
+			<div class="form-group">
+            	<input type="number" class="form-control" name="txt_uphone" placeholder="Enter Phone Number" />
+            </div>
             <div class="clearfix"></div><hr />
             <div class="form-group">
             	<button type="submit" class="btn btn-primary" name="btn-signup">
                 	<i class="glyphicon glyphicon-open-file"></i>&nbsp;REGISTER
                 </button>
             </div>
-            <br />
             <label>I'm already have an account. <a href="login.php">Log In</a></label>
         </form>
        </div>
