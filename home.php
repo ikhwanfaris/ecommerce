@@ -1,67 +1,6 @@
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
-
-require_once("class.user.php");
-	$auth_user = new USER();
-	
-	
-	$user_id = $_SESSION['user_session'];
-	
-	$stmt = $auth_user->runQuery("SELECT * FROM users WHERE user_id=:user_id");
-	$stmt->execute(array(":user_id"=>$user_id));
-	
-	$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
-
-if(isset($_POST["add_to_cart"]))
-{
-	if(isset($_SESSION["shopping_cart"]))
-	{
-		$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
-		if(!in_array($_GET["id"], $item_array_id))
-		{
-			$count = count($_SESSION["shopping_cart"]);
-			$item_array = array(
-				'item_id'		=>	$_GET["id"],
-				'item_name'		=>	$_POST["hidden_name"],
-				'item_price'		=>	$_POST["hidden_price"],
-				'item_quantity'		=>	$_POST["quantity"]
-			);
-			$_SESSION["shopping_cart"][$count] = $item_array;
-		}
-		else
-		{
-			echo '<script>alert("Item Already Added")</script>';
-		}
-	}
-	else
-	{
-		$item_array = array(
-			'item_id'		=>	$_GET["id"],
-			'item_name'		=>	$_POST["hidden_name"],
-			'item_price'		=>	$_POST["hidden_price"],
-			'item_quantity'		=>	$_POST["quantity"]
-		);
-		$_SESSION["shopping_cart"][0] = $item_array;
-	}
-}
-
-if(isset($_GET["action"]))
-{
-	if($_GET["action"] == "delete")
-	{
-		foreach($_SESSION["shopping_cart"] as $keys => $values)
-		{
-			if($values["item_id"] == $_GET["id"])
-			{
-				unset($_SESSION["shopping_cart"][$keys]);
-				echo '<script>alert("Item Removed")</script>';
-				echo '<script>window.location="index.php"</script>';
-			}
-		}
-	}
-}
-
+$connect = mysqli_connect("localhost", "root", "", "test");   
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +11,7 @@ if(isset($_GET["action"]))
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Index-FoodPack </title>
+	<title>Home-FoodPack </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -127,11 +66,9 @@ if(isset($_GET["action"]))
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-						<div align="left">
-							<h1 class="to-animate">FoodPack</h1></div></br>
+							<h1 class="to-animate">FoodPack</h1></br>
 							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
 							<h2 class="to-animate">Call 1800 2525 4388 now!</h2>
-							<h2 class="to-animate">Welcome <?php print($userRow['user_name']); ?></h2>
 						</div>
 					</div>
 				</div>
@@ -154,12 +91,12 @@ if(isset($_GET["action"]))
 						<a href="#" data-nav-section="promotions">Promotions</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="index.html">FoodPack</a>
+						<a href="home.php">FoodPack</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
 						<a href="#" data-nav-section="account">Account</a>
-						<a href="#" data-nav-section="order">Order</a>
+						<a href="#" data-nav-section="contact">Contact</a>
 				</div>
 				
 			</div>
@@ -179,6 +116,7 @@ if(isset($_GET["action"]))
 				<h2 class="heading to-animate">About Us</h2>
 				<p class="to-animate"><span class="firstcharacter">D</span>eliver the food to you when you are hungry. The solution to your transportation problem to get something to eat daily. We are trying our best to deliver the best and fresh dishes for you .
 				</p>
+				<p class="text-center to-animate"><a href="register.php" class="btn btn-primary btn-outline">Register Now</a></p>
 			</div>
 		</div>
 
@@ -442,8 +380,8 @@ if(isset($_GET["action"]))
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2 to-animate">
-						<h2 class="heading">My Account</h2>
-						<p class="text-center to-animate"><a href="logout.php?logout=true" class="btn btn-primary btn-outline">Sign Out</a></p>
+						<h2 class="heading">My Account</h2>						
+						<p class="text-center to-animate"><a href="login.php" class="btn btn-primary btn-outline">Log In</a></p>
 					</div>
 				</div>
 				
@@ -453,6 +391,10 @@ if(isset($_GET["action"]))
 				</div>
 			</div>
 		</div>
+
+		</div>
+	</div>
+	<br />
 	</body>
 </html>
 
@@ -470,88 +412,66 @@ if(isset($_GET["action"]))
 }*/
 ?>
 
-<<<<<<< HEAD
-
-=======
 		
-		<div id="fh5co-contact" data-section="order">
-		<div class="container">
-			<h1><center>Select Order</center></h1>
-			<br>
-			<br />
-			<?php
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
-				$result = mysqli_query($connect, $query);
-				if(mysqli_num_rows($result) > 0)
-				{
-					while($row = mysqli_fetch_array($result))
-					{
-				?>
-			<div class="col-md-4">
-			<br>
-				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />  
-						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
-						<h4 class="text-danger">RM <?php echo $row["price"]; ?></h4>
-						<input type="text" name="quantity" value="1" class="form-control" />
-						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="test" />
+		<div id="fh5co-contact" data-section="contact">
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="heading to-animate">Contact</h2>
+						<p class="sub-heading to-animate"></p>
 					</div>
-				</form>
-			</div>
-			<?php
-					}
-				}
-			?>
-			<div style="clear:both"></div>
-			<br />
-			<h3>Order Details</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<tr>
-						<th width="40%">Item Name</th>
-						<th width="10%">Quantity</th>
-						<th width="20%">Price</th>
-						<th width="15%">Total</th>
-						<th width="5%">Action</th>
-					</tr>
-					<?php
-					if(!empty($_SESSION["shopping_cart"]))
-					{
-						$total = 0;
-						foreach($_SESSION["shopping_cart"] as $keys => $values)
-						{
-					?>
-					<tr>
-						<td><?php echo $values["item_name"]; ?></td>
-						<td><?php echo $values["item_quantity"]; ?></td>
-						<td>RM <?php echo $values["item_price"]; ?></td>
-						<td>RM <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
-						<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
-					</tr>
-					<?php
-							$total = $total + ($values["item_quantity"] * $values["item_price"]);
-						}
-					?>
-					<tr>
-						<td colspan="3" align="right">Total</td>
-						<td align="right">RM <?php echo number_format($total, 2); ?></td>
-						<td></td>
-					</tr>
+				</div>
+				<div class="row">
+					<div class="col-md-6 to-animate-2">
+						<h3>Contact Info</h3>
+						<ul class="fh5co-contact-info">
+							<li class="fh5co-contact-address ">
+								<i class="icon-home"></i>
+								1345 Foodee Pack 56 Kuala Lumpur 56550, <br>Wilayah Persekutuan
+							</li>
+							<li><i class="icon-phone"></i> (+6) 03-888 6789</li>
+							<li><i class="icon-envelope"></i>foodee@hotmail.com</li>
+							<li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank">www.foodee.com</a></li>
+						</ul>
+					</div>
+					<div class="col-md-6 to-animate-2">
+						<h3>Contact Form</h3>
+						<div class="form-group ">
+							<label for="name" class="sr-only">Name</label>
+							<input id="name" class="form-control" placeholder="Name" type="text">
+						</div>
+						<div class="form-group ">
+							<label for="email" class="sr-only">Email</label>
+							<input id="email" class="form-control" placeholder="Email" type="email">
+						</div>
+						<div class="form-group">
+							<label for="occation" class="sr-only">Product menu</label>
+							<select class="form-control" id="occation">
+								<option>Select product menu</option>
+							  <option>Breakfast</option>
+							  <option>Lunch</option>
+							  <option>Dinner</option>
+							</select>
+						</div>
+						<div class="form-group ">
+							<label for="date" class="sr-only">Date</label>
+							<input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
+						</div>
 
-					<?php
-					}
-					?>
-						
-				</table>
+
+							
+						<div class="form-group ">
+							<label for="message" class="sr-only">Message</label>
+							<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+						</div>
+						<div class="form-group ">
+							<input class="btn btn-primary" value="Send Message" type="submit">
+						</div>
+						</div>
+				</div>
 			</div>
 		</div>
-	</div>
->>>>>>> 4a82b0bf3e352778c9f8b26d75b64696691c717c
-	<br />
+		</div>
 
 	<div id="fh5co-footer">
 		<div class="container">
