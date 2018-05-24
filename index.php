@@ -775,7 +775,7 @@ if(isset($_GET["action"]))
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
 						<h2 class="heading to-animate">Contact</h2>
-						<a href="index.php"><img src="images/welcome_img" alt=""></a>
+						<a href="index.php"><img src="images/welcome_img.png" alt=""></a>
 						<p class="sub-heading to-animate"></p>
 					</div>
 
