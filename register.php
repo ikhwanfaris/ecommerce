@@ -5,7 +5,7 @@ $user = new USER();
 
 if($user->is_loggedin()!="")
 {
-	$user->redirect('home.php');
+	$user->redirect('index.php');
 }
 
 if(isset($_POST['btn-signup']))
@@ -58,23 +58,87 @@ if(isset($_POST['btn-signup']))
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage : Sign up</title>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="style.css" type="text/css"  />
-</head>
-<body>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Register-FoodPack </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.png">
+
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Datetimepicker -->
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		
+		<div class="js-sticky">
+			<div class="fh5co-main-nav">
+				<div class="container-fluid">
+					<div class="fh5co-menu-1">
+						<a></a>
+						<a></a>
+						<a></a>
+					</div>
+					<div class="fh5co-logo">
+						<a href="home.php">FoodPack</a>
+					</div>
+					<div class="fh5co-menu-2">
+					<a></a>
+						<a></a>
+						<a></a>
+				</div>
+				
+			</div>
+		</div>
+
+	<div id="fh5co-container" style="background-image: url(images/slide_2.jpg);">
 <div class="signin-form">
 
 <div class="container">
     	
         <form method="post" class="form-signin">
-            <h2 class="form-signin-heading">Sign up.</h2><hr />
+            <h2 class="form-signin-heading">Register</h2><hr />
             <?php
 			if(isset($error))
 			{
@@ -108,16 +172,62 @@ if(isset($_POST['btn-signup']))
             <div class="clearfix"></div><hr />
             <div class="form-group">
             	<button type="submit" class="btn btn-primary" name="btn-signup">
-                	<i class="glyphicon glyphicon-open-file"></i>&nbsp;SIGN UP
+                	<i class="glyphicon glyphicon-open-file"></i>&nbsp;REGISTER
                 </button>
             </div>
             <br />
-            <label>have an account ! <a href="login.php">Sign In</a></label>
+            <label>I'm already have an account. <a href="login.php">Log In</a></label>
         </form>
        </div>
 </div>
 
 </div>
+		</div>
+
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row row-padded">
+				<div class="col-md-12 text-center">
+					<p class="to-animate">&copy; 2018 Foodee website. <br> Designed by <a href="http://freehtml5.co/" target="_blank">Foodeepack</a> Delivery food<a href="" target="_blank"> Online system</a> <br>Order.Pay.Eat<a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank"> foodeepack</a>
+					</p>
+					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="fh5co-social">
+						<li class="to-animate-2"><a href="#"><i class="icon-facebook"></i></a></li>
+						<li class="to-animate-2"><a href="#"><i class="icon-twitter"></i></a></li>
+						<li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Bootstrap DateTimePicker -->
+	<script src="js/moment.js"></script>
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script>
+		$(function () {
+	       $('#date').datetimepicker();
+	   });
+	</script>
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
 
 </body>
 </html>
