@@ -70,7 +70,11 @@ if(isset($_GET["action"]))
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
+	<title>FoodPack | ONLINE FOOD DELIVERY SYSTEM</title>
+=======
 	<title>Index-FoodPack </title>
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -86,7 +90,7 @@ if(isset($_GET["action"]))
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="icon" href="images/favicon.png"/>
 
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
 	
@@ -125,11 +129,18 @@ if(isset($_GET["action"]))
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
+<<<<<<< HEAD
+							<h3 style="text-align: center; color: white">ONLINE FOOD DELIVERY SYSTEM</h3>
+							<h1 class="to-animate">FoodPack</h1>
+							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
+							<h2 class="to-animate">CALL 1800 2525 4388 NOW!</h2>
+=======
 						<div align="left">
 							<h1 class="to-animate">FoodPack</h1></div></br>
 							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
 							<h2 class="to-animate">Call 1800 2525 4388 now!</h2>
 							<h2 class="to-animate">Welcome <?php print($userRow['user_name']); ?></h2>
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 						</div>
 					</div>
 				</div>
@@ -152,7 +163,11 @@ if(isset($_GET["action"]))
 						<a href="#" data-nav-section="promotions">Promotions</a>
 					</div>
 					<div class="fh5co-logo">
+<<<<<<< HEAD
+						<a href="" data-nav-section="foodpack" >FoodPack</a>
+=======
 						<a href="index.html">FoodPack</a>
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
@@ -234,26 +249,26 @@ if(isset($_GET["action"]))
 						<div class="fh5co-v-half to-animate-2">
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_1.jpg)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-								<h2>Fresh Mushrooms</h2>
+								<h2>Fusilli Tomato Fried</h2>
 								<span class="pricing">RM 7.50</span>
-								<p></p>
+								<p>Pasta, salt, olive oil, garlic, cherry tomatoes, Parmesan</p>
 							</div>
 						</div>
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_2.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Grilled Chiken Salad</h2>
-									<span class="pricing">RM12.00</span>
-									<p></p>
+									<h2>Sausages Grill</h2>
+									<span class="pricing">RM 7.90</span>
+									<p>Ground meat, beef along with salt, other flavourings, and breadcrumbs, encased by a skin</p>
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_8.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
-									<h2>Cheese and Garlic Toast</h2>
-									<span class="pricing">RM 4.50</span>
-									<p></p>
+									<h2>Beef Grilled</h2>
+									<span class="pricing">RM11.90</span>
+									<p>Onion, garlic, olive oil, vinegar, soy sauce</p>
 								</div>
 							</div>
 						</div>
@@ -262,26 +277,26 @@ if(isset($_GET["action"]))
 							<div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_7.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-right">
-									<h2>Organic Egg</h2>
+									<h2>Orange Juice</h2>
 									<span class="pricing">RM 4.90</span>
-									<p></p>
+									<p>Fresh orange fruits, sugar</p>
 								</div>
 							</div>
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_6.jpg)"></div>
 								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Salad with Crispy Chicken</h2>
-									<span class="pricing">RM 8.50</span>
-									<p></p>
+									<h2>Apple Juice</h2>
+									<span class="pricing">RM 4.90</span>
+									<p>Apple fruits and sugar</p>
 								</div>
 							</div>
 						</div>
 						<div class="fh5co-v-half to-animate-2">
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_3.jpg)"></div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-								<h2>Tomato Soup with Chicken</h2>
-								<span class="pricing">RM12.90</span>
-								<p></p>
+								<h2>Beef Steak</h2>
+								<span class="pricing">RM10.90</span>
+								<p>Onion, garlic, olive oil, vinegar, soy sauce</p>
 							</div>
 						</div>
 
@@ -302,62 +317,62 @@ if(isset($_GET["action"]))
 				<div class="row row-padded">
 					<div class="col-md-6">
 						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-drinks">Drinks</h2>
+							<h2 class="fh5co-dishes">Main Menu</h2>
 							<ul>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasilemak2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Pineapple Juice</h3>
-											<p></p>
+											<h3>Nasi Lemak</h3>
+											<p>Coconut rice, chilies, fried anchovies, peanut, sliced cucumber or tomato, egg</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 3.50
+										RM 4.50
 									</div>
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasiayam.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Green Juice</h3>
-											<p></p>
+											<h3>Chicken Rice</h3>
+											<p>Savory sweet chili sauce and rice, steamed/fried chicken with chicken soup</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 4.90
+										RM 5.00
 									</div>
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasikerabu.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Soft Drinks</h3>
-											<p></p>
+											<h3>Nasi Kerabu</h3>
+											<p>Prawn CrackeR, Boiled Salted Egg, Fish Stuffed Chilli, Turmeric Fried Fish, Fried Chicken</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 2.90
+										RM 6.00
 									</div>
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasigoreng.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Carlo Rosee Drinks</h3>
-											<p></p>
+											<h3>Nasi Goreng Ikan Bilis</h3>
+											<p>Spring onions, ginger, dried chili, anchovies, cooked rice, Pepper, Salt</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 5.90
+										RM 4.00
 									</div>
 								</li>
 							</ul>
@@ -374,7 +389,7 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Beef Steak</h3>
-											<p></p>
+											<p>Onion, garlic, olive oil, vinegar, soy sauce and beef</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
@@ -388,7 +403,7 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Tomato with Chicken</h3>
-											<p></p>
+											<p>Garlic around the chicken, tomatoes, vinegar, and tomato paste</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
@@ -401,8 +416,8 @@ if(isset($_GET["action"]))
 											<img src="images/res_img_2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Sausages from Italy</h3>
-											<p></p>
+											<h3>Sausages</h3>
+											<p>Ground meat, beef along with salt, other flavourings, and breadcrumbs, encased by a skin</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
@@ -416,11 +431,213 @@ if(isset($_GET["action"]))
 										</figure>
 										<div>
 											<h3>Beef Grilled</h3>
-											<p></p>
+											<p>Onion, garlic, olive oil, vinegar, soy sauce and beef</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
 										RM11.90
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row row-padded">
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-dishes">Soup/Porridge</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/vegesoup.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Vegetable Soup</h3>
+											<p>Onion, celery, carrot, tomatoes</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 4.50
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/fishporridge.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Fish Porridge</h3>
+											<p>Rice, fish, soy sauce, pepper, and sesame oil</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 3.50
+									</div>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-dishes">Seafood</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/prawntomyam.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Prawn Tomyam</h3>
+											<p>Lemongrass, golden mushroom, prawns, tomyam paste, lime juice and chilli</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 7.90
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/thai tomyam.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Mixed Tomyam</h3>
+											<p>Chicken, prawn, lemongrass, prawns, tomyam paste, lime juice and chilli</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 9.90
+									</div> 
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+
+					<div class="row row-padded">
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-drinks">Juices</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Watermelon Juice</h3>
+											<p>Watermelon fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 3.50
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Apple Juice</h3>
+											<p>Apple fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 4.90
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Orange Juice</h3>
+											<p>Fresh orange fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 2.90
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Carrot Juice</h3>
+											<p>Carrot fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 5.90
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-drinks">Hot/Cold Drinks</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/coffee.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Hot Coffee</h3>
+											<p>Coffee, creamer</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 1.60
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/hotchocolate.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Hot Chocolate</h3>
+											<p>Chocolate, creamer</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 2.20
+									</div> 
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/tea.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Iced Tea</h3>
+											<p>Tea, Sugar and Ice</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 1.20
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/milo.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Iced Milo</h3>
+											<p>Milo, Milk and Ice</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 1.90
 									</div>
 								</li>
 							</ul>
@@ -435,7 +652,7 @@ if(isset($_GET["action"]))
 			</div>
 		</div>
 
-		<div id="fh5co-events" data-section="account" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
+		<div id="fh5co-events" data-section="account" style="background-image: url(images/notelogin.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
@@ -443,6 +660,34 @@ if(isset($_GET["action"]))
 						<h2 class="heading">My Account</h2>
 						<p class="text-center to-animate"><a href="logout.php?logout=true" class="btn btn-primary btn-outline">Sign Out</a></p>
 					</div>
+<div id="content">
+  <div>
+    <div id="account">
+      <div>
+        <form action="#">
+          
+          <center>
+            <div class="input-group">
+			<label>Username </label>
+			<input type="text" name="username" placeholder="Enter username" required>
+		</div><br>
+		<div class="input-group">
+			<label>Password       </label>
+			<input type="password" name="password" placeholder="Enter correct password" required>
+		</div><br/>
+		<div class="input-group">
+			<button type="submit" name="sign_in" class="btn">Sign In</button>
+		</div><br/>
+		<p>
+			Not yet registered? <a href="register.php">Sign Up</a>
+         
+          </center>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 				</div>
 				
 						
@@ -470,13 +715,19 @@ if(isset($_GET["action"]))
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
+<div class="container" data-section="foodpack">
+=======
 =======
 		
 		<div id="fh5co-contact" data-section="order">
 		<div class="container">
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 			<h1><center>Select Order</center></h1>
+			<h3><center>Select your product menu for</center></h3>
+			<h4><center>Breakfast - Lunch - Dinner</center></h4>
 			<br>
-			<br />
+
 			<?php
 				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
@@ -485,6 +736,7 @@ if(isset($_GET["action"]))
 					while($row = mysqli_fetch_array($result))
 					{
 				?>
+
 			<div class="col-md-4">
 			<br>
 				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
@@ -546,16 +798,100 @@ if(isset($_GET["action"]))
 						
 				</table>
 			</div>
+			<button type="submit" name="payment" class="btn">Make a payment</button>
 		</div>
 	</div>
 >>>>>>> 4a82b0bf3e352778c9f8b26d75b64696691c717c
 	<br />
+<<<<<<< HEAD
+	</body>
+</html>
+
+<?php
+//If you have use Older PHP Version, Please Uncomment this function for removing error 
+
+/*function array_column($array, $column_name)
+{
+	$output = array();
+	foreach($array as $keys => $values)
+	{
+		$output[] = $values[$column_name];
+	}
+	return $output;
+}*/
+?>
+
+		
+		<div id="fh5co-contact" data-section="contact">
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="heading to-animate">Contact</h2>
+						<a href="index.php"><img src="images/welcome_img.png" alt=""></a>
+						<p class="sub-heading to-animate"></p>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 to-animate-2">
+						<h3>Contact Info</h3>
+						<ul class="fh5co-contact-info">
+							<li class="fh5co-contact-address ">
+								<i class="icon-home"></i>
+								1345 FoodPack 56 Kuala Lumpur 56550, <br>Wilayah Persekutuan
+							</li>
+							<li><i class="icon-phone"></i> (+6) 03-888 6789</li>
+							<li><i class="icon-envelope"></i>foodpack@hotmail.com</li>
+							<li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank">www.foodpack.com</a></li>
+						</ul>
+					</div>
+					<div class="col-md-6 to-animate-2">
+						<h3>Contact Form</h3>
+						<div class="form-group ">
+							<label for="name" class="sr-only">Name</label>
+							<input id="name" class="form-control" placeholder="Name" type="text">
+						</div>
+						<div class="form-group ">
+							<label for="email" class="sr-only">Email</label>
+							<input id="email" class="form-control" placeholder="Email" type="email">
+						</div>
+						<div class="form-group">
+							<label for="occation" class="sr-only">Product menu</label>
+							<select class="form-control" id="occation">
+								<option>Select product menu</option>
+							  <option>Breakfast</option>
+							  <option>Lunch</option>
+							  <option>Dinner</option>
+							</select>
+						</div>
+						<div class="form-group ">
+							<label for="date" class="sr-only">Date</label>
+							<input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
+						</div>
+
+
+							
+						<div class="form-group ">
+							<label for="message" class="sr-only">Message</label>
+							<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+						</div>
+						<div class="form-group ">
+							<input class="btn btn-primary" value="Send Message" type="submit">
+						</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		</div>
+=======
+>>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 
 	<div id="fh5co-footer">
 		<div class="container">
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
-					<p class="to-animate">&copy; 2018 Foodee website. <br> Designed by <a href="http://freehtml5.co/" target="_blank">Foodeepack</a> Delivery food<a href="" target="_blank"> Online system</a> <br>Order.Pay.Eat<a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank"> foodeepack</a>
+					<p class="to-animate">&copy; 2018 FoodPack website. <br> Designed by <a href="http://freehtml5.co/" target="_blank">Foodpack</a> Delivery Food<a href="" target="_blank"> Online System</a> <br>Order.Pay.Eat<a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank"> foodpack</a>
 					</p>
 					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
 				</div>
@@ -572,6 +908,27 @@ if(isset($_GET["action"]))
 		</div>
 	</div>
 	
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
