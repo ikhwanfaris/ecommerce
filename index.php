@@ -70,11 +70,7 @@ if(isset($_GET["action"]))
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
 	<title>FoodPack | ONLINE FOOD DELIVERY SYSTEM</title>
-=======
-	<title>Index-FoodPack </title>
->>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -129,18 +125,11 @@ if(isset($_GET["action"]))
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-<<<<<<< HEAD
 							<h3 style="text-align: center; color: white">ONLINE FOOD DELIVERY SYSTEM</h3>
 							<h1 class="to-animate">FoodPack</h1>
 							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
 							<h2 class="to-animate">CALL 1800 2525 4388 NOW!</h2>
-=======
-						<div align="left">
-							<h1 class="to-animate">FoodPack</h1></div></br>
-							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
-							<h2 class="to-animate">Call 1800 2525 4388 now!</h2>
 							<h2 class="to-animate">Welcome <?php print($userRow['user_name']); ?></h2>
->>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 						</div>
 					</div>
 				</div>
@@ -163,11 +152,7 @@ if(isset($_GET["action"]))
 						<a href="#" data-nav-section="promotions">Promotions</a>
 					</div>
 					<div class="fh5co-logo">
-<<<<<<< HEAD
 						<a href="" data-nav-section="foodpack" >FoodPack</a>
-=======
-						<a href="index.html">FoodPack</a>
->>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
