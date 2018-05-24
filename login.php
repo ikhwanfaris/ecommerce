@@ -94,13 +94,10 @@ if(isset($_POST['btn-login']))
 						<a></a>
 				</div>
 				
-			</div>
-
-	</br></br>					
-	<div id="fh5co-container" style="background-image: url(images/slide_2.jpg)" opacity="0.5";>
+			</div>				
+	<div id="fh5co-container" style="background-image: url(images/cover.jpg);" >
+	<div class="container" style="height: 690px;">\
 		<div class="signin-form">
-			<div class="container">
-     
 			<div class="col-md-12 text-center"> 
        <form class="form-signin" method="post" id="login-form">
       
@@ -146,14 +143,13 @@ if(isset($_POST['btn-login']))
 
 	<div id="fh5co-footer">
 		<div class="container">
-			<div class="row row-padded">
 				<div class="col-md-12 text-center">
 					<p class="to-animate">&copy; 2018 Foodee website. <br> Designed by <a href="http://freehtml5.co/" target="_blank">Foodeepack</a> Delivery food<a href="" target="_blank"> Online system</a> <br>Order.Pay.Eat<a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank"> foodeepack</a>
 					</p>
 					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
 				</div>
-			</div>
-			<div class="row">
+
+
 				<div class="col-md-12 text-center">
 					<ul class="fh5co-social">
 						<li class="to-animate-2"><a href="#"><i class="icon-facebook"></i></a></li>
@@ -161,9 +157,9 @@ if(isset($_POST['btn-login']))
 						<li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
 					</ul>
 				</div>
+
 			</div>
 		</div>
-	</div>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

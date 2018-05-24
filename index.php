@@ -127,7 +127,8 @@ if(isset($_GET["action"]))
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-							<h1 class="to-animate">FoodPack</h1></br>
+						<div align="left">
+							<h1 class="to-animate">FoodPack</h1></div></br>
 							<h2 class="to-animate">Order.Pay.Eat <span></span> <a href="http://freehtml5.co/" target="_blank"></a></h2>
 							<h2 class="to-animate">Call 1800 2525 4388 now!</h2>
 							<h2 class="to-animate">Welcome <?php print($userRow['user_name']); ?></h2>
@@ -157,8 +158,8 @@ if(isset($_GET["action"]))
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
-						<a href="#" data-nav-section="order">Order</a>
 						<a href="#" data-nav-section="account">Account</a>
+						<a href="#" data-nav-section="order">Order</a>
 				</div>
 				
 			</div>

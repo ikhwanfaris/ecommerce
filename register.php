@@ -111,10 +111,9 @@ if(isset($_POST['btn-signup']))
 
 	</head>
 	<body>
-		
-		<div class="js-sticky">
+	
 			<div class="fh5co-main-nav">
-				<div class="container-fluid">
+
 					<div class="fh5co-menu-1">
 						<a></a>
 						<a></a>
@@ -128,15 +127,12 @@ if(isset($_POST['btn-signup']))
 						<a></a>
 						<a></a>
 				</div>
-				
-			</div>
-		</div>
-
-	<div id="fh5co-container" style="background-image: url(images/slide_2.jpg);">
+</div>
+			
+	<div id="fh5co-container" style="background-image: url(images/cover.jpg);" >
+<div class="container" style="height: 690px;">
 <div class="signin-form">
-
-<div class="container">
-    	
+<div class="col-md-12 text-center"> 
         <form method="post" class="form-signin">
             <h2 class="form-signin-heading">Register</h2><hr />
             <?php
@@ -183,9 +179,10 @@ if(isset($_POST['btn-signup']))
 
 </div>
 		</div>
+		</div>
 
 	<div id="fh5co-footer">
-		<div class="container">
+		<div class="container"  style="height: 400px;">
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
 					<p class="to-animate">&copy; 2018 Foodee website. <br> Designed by <a href="http://freehtml5.co/" target="_blank">Foodeepack</a> Delivery food<a href="" target="_blank"> Online system</a> <br>Order.Pay.Eat<a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank"> foodeepack</a>

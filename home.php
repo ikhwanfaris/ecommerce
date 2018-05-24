@@ -95,8 +95,8 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="menu">Menu</a>
-						<a href="#" data-nav-section="contact">Contact</a>
 						<a href="#" data-nav-section="account">Account</a>
+						<a href="#" data-nav-section="contact">Contact</a>
 				</div>
 				
 			</div>
