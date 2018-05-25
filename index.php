@@ -4,10 +4,9 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 
 require_once("class.user.php");
 	$auth_user = new USER();
-	$user_id = $_SESSION['user_session'];
-
+	
 	$stmt = $auth_user->runQuery("SELECT * FROM users WHERE user_id=:user_id");
-	$stmt->execute(array(":user_id"=>$user_id));
+
 	
 	$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -698,179 +697,9 @@ if(isset($_GET["action"]))
 }*/
 ?>
 
-<<<<<<< HEAD
 
-<<<<<<< HEAD
 <div class="container" data-section="foodpack">
-=======
-=======
-		
-		<div id="fh5co-contact" data-section="order">
-		<div class="container">
->>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
-			<h1><center>Select Order</center></h1>
-			<h3><center>Select your product menu for</center></h3>
-			<h4><center>Breakfast - Lunch - Dinner</center></h4>
-			<br>
-
-			<?php
-				$query = "SELECT * FROM tbl_product ORDER BY id ASC";
-				$result = mysqli_query($connect, $query);
-				if(mysqli_num_rows($result) > 0)
-				{
-					while($row = mysqli_fetch_array($result))
-					{
-				?>
-
-			<div class="col-md-4">
-			<br>
-				<form method="post" action="index.php?action=add&id=<?php echo $row["id"]; ?>">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						<img src="images/<?php echo $row["image"]; ?>" class="img-responsive" /><br />  
-						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
-						<h4 class="text-danger">RM <?php echo $row["price"]; ?></h4>
-						<input type="text" name="quantity" value="1" class="form-control" />
-						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
-						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="test" />
-					</div>
-				</form>
-			</div>
-			<?php
-					}
-				}
-			?>
-			<div style="clear:both"></div>
-			<br />
-			<h3>Order Details</h3>
-			<div class="table-responsive">
-				<table class="table table-bordered">
-					<tr>
-						<th width="40%">Item Name</th>
-						<th width="10%">Quantity</th>
-						<th width="20%">Price</th>
-						<th width="15%">Total</th>
-						<th width="5%">Action</th>
-					</tr>
-					<?php
-					if(!empty($_SESSION["shopping_cart"]))
-					{
-						$total = 0;
-						foreach($_SESSION["shopping_cart"] as $keys => $values)
-						{
-					?>
-					<tr>
-						<td><?php echo $values["item_name"]; ?></td>
-						<td><?php echo $values["item_quantity"]; ?></td>
-						<td>RM <?php echo $values["item_price"]; ?></td>
-						<td>RM <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?></td>
-						<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
-					</tr>
-					<?php
-							$total = $total + ($values["item_quantity"] * $values["item_price"]);
-						}
-					?>
-					<tr>
-						<td colspan="3" align="right">Total</td>
-						<td align="right">RM <?php echo number_format($total, 2); ?></td>
-						<td></td>
-					</tr>
-
-					<?php
-					}
-					?>
-						
-				</table>
-			</div>
-			<button type="submit" name="payment" class="btn">Make a payment</button>
-		</div>
-	</div>
->>>>>>> 4a82b0bf3e352778c9f8b26d75b64696691c717c
 	<br />
-<<<<<<< HEAD
-	</body>
-</html>
-
-<?php
-//If you have use Older PHP Version, Please Uncomment this function for removing error 
-
-/*function array_column($array, $column_name)
-{
-	$output = array();
-	foreach($array as $keys => $values)
-	{
-		$output[] = $values[$column_name];
-	}
-	return $output;
-}*/
-?>
-
-		
-		<div id="fh5co-contact" data-section="contact">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Contact</h2>
-						<a href="index.php"><img src="images/welcome_img.png" alt=""></a>
-						<p class="sub-heading to-animate"></p>
-					</div>
-
-				</div>
-
-				<div class="row">
-					<div class="col-md-6 to-animate-2">
-						<h3>Contact Info</h3>
-						<ul class="fh5co-contact-info">
-							<li class="fh5co-contact-address ">
-								<i class="icon-home"></i>
-								1345 FoodPack 56 Kuala Lumpur 56550, <br>Wilayah Persekutuan
-							</li>
-							<li><i class="icon-phone"></i> (+6) 03-888 6789</li>
-							<li><i class="icon-envelope"></i>foodpack@hotmail.com</li>
-							<li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank">www.foodpack.com</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6 to-animate-2">
-						<h3>Contact Form</h3>
-						<div class="form-group ">
-							<label for="name" class="sr-only">Name</label>
-							<input id="name" class="form-control" placeholder="Name" type="text">
-						</div>
-						<div class="form-group ">
-							<label for="email" class="sr-only">Email</label>
-							<input id="email" class="form-control" placeholder="Email" type="email">
-						</div>
-						<div class="form-group">
-							<label for="occation" class="sr-only">Product menu</label>
-							<select class="form-control" id="occation">
-								<option>Select product menu</option>
-							  <option>Breakfast</option>
-							  <option>Lunch</option>
-							  <option>Dinner</option>
-							</select>
-						</div>
-						<div class="form-group ">
-							<label for="date" class="sr-only">Date</label>
-							<input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
-						</div>
-
-
-							
-						<div class="form-group ">
-							<label for="message" class="sr-only">Message</label>
-							<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group ">
-							<input class="btn btn-primary" value="Send Message" type="submit">
-						</div>
-						</div>
-				</div>
-			</div>
-		</div>
-		</div>
-=======
->>>>>>> 717cecc790740d30dabd8167fa8ceec9d7cb9ec5
 
 	<div id="fh5co-footer">
 		<div class="container">

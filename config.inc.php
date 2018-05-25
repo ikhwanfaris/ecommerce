@@ -1,7 +1,7 @@
 <?php
 $db_username        = 'root'; //MySql database username
 $db_password        = ''; //MySql dataabse password
-$db_name            = 'test2'; //MySql database name
+$db_name            = 'test'; //MySql database name
 $db_host            = 'localhost'; //MySql hostname or IP
 
 $currency			= 'RM'; //currency symbol
