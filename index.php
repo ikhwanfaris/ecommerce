@@ -292,7 +292,7 @@ if(isset($_GET["action"]))
 			</div>
 		</div>
 
-		<div id="fh5co-menus" data-section="menu" style="height: 2790px;">
+		<div id="fh5co-menus" data-section="menu" style="height: 3190px;">
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
@@ -645,6 +645,22 @@ if(isset($_GET["action"]))
 					<div class="col-md-8 col-md-offset-2 to-animate">
 						<h2 class="heading">My Account</h2>
 						<p class="text-center to-animate"><a href="logout.php?logout=true" class="btn btn-primary btn-outline">Sign Out</a></p>
+					</div>
+
+				</div>
+				
+						
+					</div>
+					</div>
+				</div>
+			</div>
+			<div id="fh5co-events" data-section="order" style="background-color: white; image">
+			<div class="fh5co-overlay"></div>
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded">
+					<div class="col-md-8 col-md-offset-2 to-animate">
+						<h2 class="heading">Order Food</h2>
+						<p class="text-center to-animate"><a href="cart/index.php" class="btn btn-primary btn-outline">Order</a></p>
 					</div>
 
 				</div>
