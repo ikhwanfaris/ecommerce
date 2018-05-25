@@ -11,7 +11,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home-FoodPack </title>
+	<title>FoodPack | ONLINE FOOD DELIVERY SYSTEM</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -231,7 +231,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 			</div>
 		</div>
 
-		<div id="fh5co-menus" data-section="menu">
+<div id="fh5co-menus" data-section="menu" style="height: 2790px;">
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
@@ -242,62 +242,62 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 				<div class="row row-padded">
 					<div class="col-md-6">
 						<div class="fh5co-food-menu to-animate-2">
-							<h2 class="fh5co-drinks">Drinks</h2>
+							<h2 class="fh5co-dishes">Main Menu</h2>
 							<ul>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasilemak2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Pineapple Juice</h3>
-											<p></p>
+											<h3>Nasi Lemak</h3>
+											<p>Coconut rice, chilies, fried anchovies, peanut, sliced cucumber or tomato, egg</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 3.50
+										RM 4.50
 									</div>
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasiayam.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Green Juice</h3>
-											<p></p>
+											<h3>Chicken Rice</h3>
+											<p>Savory sweet chili sauce and rice, steamed/fried chicken with chicken soup</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 4.90
+										RM 5.00
 									</div>
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasikerabu.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Soft Drinks</h3>
-											<p></p>
+											<h3>Nasi Kerabu</h3>
+											<p>Prawn CrackeR, Boiled Salted Egg, Fish Stuffed Chilli, Turmeric Fried Fish, Fried Chicken</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 2.90
+										RM 6.00
 									</div>
 								</li>
 								<li>
 									<div class="fh5co-food-desc">
 										<figure>
-											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+											<img src="images/nasigoreng.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Carlo Rosee Drinks</h3>
-											<p></p>
+											<h3>Nasi Goreng Ikan Bilis</h3>
+											<p>Spring onions, ginger, dried chili, anchovies, cooked rice, Pepper, Salt</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
-										RM 5.90
+										RM 4.00
 									</div>
 								</li>
 							</ul>
@@ -314,7 +314,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 										</figure>
 										<div>
 											<h3>Beef Steak</h3>
-											<p></p>
+											<p>Onion, garlic, olive oil, vinegar, soy sauce and beef</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
@@ -328,7 +328,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 										</figure>
 										<div>
 											<h3>Tomato with Chicken</h3>
-											<p></p>
+											<p>Garlic around the chicken, tomatoes, vinegar, and tomato paste</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
@@ -341,8 +341,8 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 											<img src="images/res_img_2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 										</figure>
 										<div>
-											<h3>Sausages from Italy</h3>
-											<p></p>
+											<h3>Sausages</h3>
+											<p>Ground meat, beef along with salt, other flavourings, and breadcrumbs, encased by a skin</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
@@ -356,11 +356,213 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 										</figure>
 										<div>
 											<h3>Beef Grilled</h3>
-											<p></p>
+											<p>Onion, garlic, olive oil, vinegar, soy sauce and beef</p>
 										</div>
 									</div>
 									<div class="fh5co-food-pricing">
 										RM11.90
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row row-padded">
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-dishes">Soup/Porridge</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/vegesoup.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Vegetable Soup</h3>
+											<p>Onion, celery, carrot, tomatoes</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 4.50
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/fishporridge.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Fish Porridge</h3>
+											<p>Rice, fish, soy sauce, pepper, and sesame oil</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 3.50
+									</div>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-dishes">Seafood</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/prawntomyam.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Prawn Tomyam</h3>
+											<p>Lemongrass, golden mushroom, prawns, tomyam paste, lime juice and chilli</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 7.90
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/thai tomyam.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Mixed Tomyam</h3>
+											<p>Chicken, prawn, lemongrass, prawns, tomyam paste, lime juice and chilli</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 9.90
+									</div> 
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+
+					<div class="row row-padded">
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-drinks">Juices</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Watermelon Juice</h3>
+											<p>Watermelon fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 3.50
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Apple Juice</h3>
+											<p>Apple fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 4.90
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Orange Juice</h3>
+											<p>Fresh orange fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 2.90
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Carrot Juice</h3>
+											<p>Carrot fruits and sugar</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 5.90
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+							<h2 class="fh5co-drinks">Hot/Cold Drinks</h2>
+							<ul>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/coffee.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Hot Coffee</h3>
+											<p>Coffee, creamer</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 1.60
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/hotchocolate.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Hot Chocolate</h3>
+											<p>Chocolate, creamer</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 2.20
+									</div> 
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/tea.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Iced Tea</h3>
+											<p>Tea, Sugar and Ice</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 1.20
+									</div>
+								</li>
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+											<img src="images/milo.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+										</figure>
+										<div>
+											<h3>Iced Milo</h3>
+											<p>Milo, Milk and Ice</p>
+										</div>
+									</div>
+									<div class="fh5co-food-pricing">
+										RM 1.90
 									</div>
 								</li>
 							</ul>
@@ -374,7 +576,6 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 				</div>
 			</div>
 		</div>
-
 		<div id="fh5co-events" data-section="account" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
