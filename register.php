@@ -132,7 +132,7 @@ if(isset($_POST['btn-signup']))
 </div>
 			
 	<div id="fh5co-container" style="background-image: url(images/cover.jpg);" >
-<div class="container" style="height: 690px;">
+<div class="container" style="height: 690px; background-color:white;">
 <div class="signin-form">
 <div class="col-md-12 text-center"> 
         <form method="post" class="form-signin">
